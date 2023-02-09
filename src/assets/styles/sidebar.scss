@@ -1,0 +1,21 @@
+#app {
+    height: 100%;
+    overflow: hidden;
+
+    .el-container {
+        height: 100vh;
+
+        .el-aside {
+            overflow: visible;
+            border-right: 1px solid #dcdfe6;
+
+            .el-scrollbar>.el-scrollbar__wrap>.el-scrollbar__view>.el-menu {
+                border: none;
+            }
+        }
+
+        .el-header {
+            padding: 0;
+        }
+    }
+}

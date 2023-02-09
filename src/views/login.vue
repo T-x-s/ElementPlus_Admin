@@ -35,7 +35,7 @@ const rules = reactive({
     userName: { required: true, message: '请输入账号', trigger: 'blur' },
     password: [
         { required: true, message: '请输入密码', trigger: 'blur' },
-        { min: 6, max: 18, message: '长度不能小于6或大于18', trigger: 'blur' }
+        // { min: 6, max: 18, message: '长度不能小于6或大于18', trigger: 'blur' }
     ]
 })
 
@@ -43,9 +43,9 @@ const $router = useRouter();
 function handleValidateLogin() {
     proxy.$refs.loginRef.validate((valid, fields) => {
         if (valid) {
-            // $router.push({
-            //     path: "dashboard"
-            // });
+            $router.push({
+                path: "layout"
+            });
         } else {
             console.log('error submit!', fields)
         }

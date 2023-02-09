@@ -1,5 +1,5 @@
 <template>
-    <n-layout has-sider>
+    <!-- <n-layout has-sider>
         <n-layout-sider bordered :inverted="false" collapse-mode="width" :collapsed="isCollapse" @collapse="isCollapse = true"
         @expand="isCollapse = false" :collapsed-width="48"
             :native-scrollbar="false" :width="200">
@@ -13,20 +13,33 @@
                 <Content></Content>
             </n-layout-content>
         </n-layout>
-    </n-layout>
+    </n-layout> -->
+    <el-container>
+        <el-aside width="200px">
+            <Menu></Menu>
+        </el-aside>
+        <el-container>
+            <el-header>
+                <Header></Header>
+            </el-header>
+            <el-main>
+                <!-- <Content></Content> -->
+            </el-main>
+        </el-container>
+    </el-container>
 </template>
 
 <script setup>
-import { ref } from "vue"
+// import { ref } from "vue"
 import Menu from "./Menu/index.vue"
 import Header from "./Header/index.vue"
-import Content from "./Content/index.vue"
+// import Content from "./Content/index.vue"
 
 /* 折叠 */
-let isCollapse = ref(false);
-function getCollapse(e) {
-    isCollapse.value = e.value;
-}
+// let isCollapse = ref(false);
+// function getCollapse(e) {
+//     isCollapse.value = e.value;
+// }
 
 </script>
 <style lang='scss' scoped>
