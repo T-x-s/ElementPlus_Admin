@@ -15,12 +15,12 @@
         </n-layout>
     </n-layout> -->
     <el-container>
-        <el-aside width="200px">
-            <Menu></Menu>
+        <el-aside :width="isCollapse ? '54px':'200px'">
+            <Menu :isCollapse="isCollapse"></Menu>
         </el-aside>
         <el-container>
             <el-header>
-                <Header></Header>
+                <Header @change-collapse="getCollapse"></Header>
             </el-header>
             <el-main>
                 <!-- <Content></Content> -->
@@ -30,16 +30,17 @@
 </template>
 
 <script setup>
-// import { ref } from "vue"
+import { ref } from "vue"
 import Menu from "./Menu/index.vue"
 import Header from "./Header/index.vue"
 // import Content from "./Content/index.vue"
 
 /* 折叠 */
-// let isCollapse = ref(false);
-// function getCollapse(e) {
-//     isCollapse.value = e.value;
-// }
+let isCollapse = ref(false);
+function getCollapse(e) {
+    isCollapse.value = e.value;
+    console.log(isCollapse);
+}
 
 </script>
 <style lang='scss' scoped>

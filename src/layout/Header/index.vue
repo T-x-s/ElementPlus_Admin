@@ -65,7 +65,7 @@ import { useRouter } from "vue-router";
 import { useFullscreen } from '@vueuse/core';
 import { ElMessage, ElMessageBox } from 'element-plus'
 import Hamburger from "@/components/Hamburger/index.vue"
-// const emits = defineEmits(['changeCollapse'])
+const emits = defineEmits(['changeCollapse'])
 
 // /* github跳转 */
 function handleJump() {
@@ -75,8 +75,8 @@ function handleJump() {
 const { isFullscreen, toggle } = useFullscreen();
 let collapsed = ref(false);
 function handleFold() {
-    // collapsed.value = !collapsed.value;
-    // emits('changeCollapse', collapsed);
+    collapsed.value = !collapsed.value;
+    emits('changeCollapse', collapsed);
 }
 
 const router = useRouter();
@@ -109,7 +109,7 @@ const handleCommand = (key) => {
 .header {
     display: flex;
     justify-content: space-between;
-    height: 49px;
+    height: 50px;
     box-shadow: 0 1px 4px #00152914;
 
     &-left {

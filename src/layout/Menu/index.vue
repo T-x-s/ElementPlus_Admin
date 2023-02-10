@@ -5,7 +5,7 @@
     </div>
     <!-- <el-scrollbar :class="sideTheme" wrap-class="scrollbar-wrapper"> -->
     <el-scrollbar>
-        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+        <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="props.isCollapse" @open="handleOpen" @close="handleClose">
             <el-sub-menu index="1">
                 <template #title>
                     <el-icon>
@@ -61,12 +61,9 @@ const handleClose = (key, keyPath) => {
     console.log(key, keyPath)
 }
 
-// const props = defineProps({
-//     isCollapse: Boolean
-// })
-const isCollapse = ref(false)
-
-// let collapsed = ref(false)
+const props = defineProps({
+    isCollapse: Boolean
+})
 </script>
 <style lang='scss' scoped>
 .menu-logo {
